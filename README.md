@@ -15,6 +15,7 @@
 - 🌐 **Works with Any Plan (Free or Paid):** Seamlessly connects whether you are on free tiers or paid Pro/Enterprise plans. Zero subscriptions or paid cloud automation platforms (like Browserbase or MultiOn) required.
 - 👁️ **Visual Multimodal Vision & DOM Control:** Enables your AI to capture high-res PNG screenshots for visual layout inspection, alongside full DOM scraping, button clicks, form filling, and navigation.
 - 🔒 **Private & 100% Local:** Operates strictly over local loopback (`127.0.0.1`). Your session cookies, authenticated tabs (AWS, Jira, GitHub), and local dev servers (`localhost:3000`) never leave your machine.
+- 🧩 **Zero Extension Bloat (One Extension for All Agents):** Eliminates the need to install separate, heavy browser extensions for each AI tool. Tactab acts as a single, lightweight gateway that connects Claude, Cursor, Antigravity, or custom agents through standard MCP.
 - 🔄 **Universal MCP Standard:** Plug-and-play with Claude Desktop, Cursor, Antigravity, Windsurf, or custom AI agents over standard I/O (`stdio`).
 
 ---
