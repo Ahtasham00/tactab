@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "tactab": {
+      "command": "node",
+      "args": [
+        "<PATH_TO_TACTAB>/server/bridge.js"
+      ]
+    }
+  }
+}
