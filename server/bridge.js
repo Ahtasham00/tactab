@@ -3,8 +3,8 @@ import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js"
 import { CallToolRequestSchema, ListToolsRequestSchema } from "@modelcontextprotocol/sdk/types.js";
 import { WebSocketServer } from "ws";
 
-// Port configuration (default 8080)
-const WS_PORT = process.env.WS_PORT ? parseInt(process.env.WS_PORT, 10) : 8080;
+// Port configuration (default 8765 to avoid conflict with standard 8080 HTTP proxies)
+const WS_PORT = process.env.WS_PORT ? parseInt(process.env.WS_PORT, 10) : 8765;
 
 let activeExtensionSocket = null;
 const pendingRequests = new Map();

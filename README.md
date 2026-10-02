@@ -28,7 +28,7 @@
 │ (Cursor, Claude, Antigravity)   │                                  │         tactab/server         │
 └─────────────────────────────────┘                                  └───────────────┬───────────────┘
                                                                                      │
-                                                                            WebSocket (ws://127.0.0.1:8080)
+                                                                            WebSocket (ws://127.0.0.1:8765)
                                                                                      │
 ┌─────────────────────────────────┐     chrome.tabs.sendMessage     ┌────────────────▼───────────────┐
 │        Webpage DOM (Tab)        │  ◄─────────────────────────────► │     Tactab Extension (MV3)    │
@@ -37,7 +37,7 @@
 ```
 
 1. **AI Agent** invokes the `automate_website` tool over standard input/output (`stdio`).
-2. **Tactab Bridge Server (`bridge.js`)** listens on `127.0.0.1:8080` and translates tool calls into JSON WebSocket messages.
+2. **Tactab Bridge Server (`bridge.js`)** listens on `127.0.0.1:8765` and translates tool calls into JSON WebSocket messages.
 3. **Tactab Chrome Extension Service Worker (`background.js`)** receives commands, manages connection status, and routes to active tabs.
 4. **Content Script (`content.js`)** executes actions inside the active web page and returns structured results back up the pipeline.
 
@@ -204,7 +204,7 @@ Copy [`AGENTS.md`](./AGENTS.md) and [`PLAN.md`](./PLAN.md) into the root of any 
 ## 🔧 Troubleshooting
 
 - **"Chrome extension is disconnected"**: Make sure Google Chrome is open, the extension is loaded, and you have an active standard website open (not a restricted internal page like `chrome://extensions` or `about:blank`).
-- **Port Customization**: By default, the bridge uses WebSocket port `8080`. To use a different port, set the `WS_PORT` environment variable before launching (e.g. `set WS_PORT=8090` / `export WS_PORT=8090`) and update the port in `extension/background.js`.
+- **Port Customization**: By default, the bridge uses WebSocket port `8765` (avoiding conflict with standard HTTP 8080 proxies). To use a different port, set the `WS_PORT` environment variable before launching (e.g. `set WS_PORT=8090` / `export WS_PORT=8090`) and update the port in `extension/background.js`.
 
 ---
 

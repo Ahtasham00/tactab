@@ -7,7 +7,7 @@ function updateBadge(status) {
     if (status === "connected") {
       chrome.action.setBadgeText({ text: "ON" });
       chrome.action.setBadgeBackgroundColor({ color: "#22c55e" }); // green
-      chrome.action.setTitle({ title: "Tactab: Connected to MCP server (ws://localhost:8080)" });
+      chrome.action.setTitle({ title: "Tactab: Connected to MCP server (ws://localhost:8765)" });
     } else {
       chrome.action.setBadgeText({ text: "OFF" });
       chrome.action.setBadgeBackgroundColor({ color: "#ef4444" }); // red
@@ -24,7 +24,7 @@ function connectWebSocket() {
   }
 
   try {
-    socket = new WebSocket("ws://127.0.0.1:8080");
+    socket = new WebSocket("ws://127.0.0.1:8765");
   } catch (err) {
     console.warn("[Tactab Background] WebSocket init failed:", err);
     updateBadge("disconnected");
@@ -33,7 +33,7 @@ function connectWebSocket() {
   }
 
   socket.onopen = () => {
-    console.log("[Tactab Background] Successfully connected to local MCP server at ws://localhost:8080");
+    console.log("[Tactab Background] Successfully connected to local MCP server at ws://localhost:8765");
     updateBadge("connected");
 
     // Explicitly register as the Chrome Extension with the bridge hub
