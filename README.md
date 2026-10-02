@@ -1,6 +1,7 @@
 # Tactab 🌐🤖
 ### Tactile Browser Control & Multimodal Vision Bridge for AI Agents
 
+[![Glama Score](https://glama.ai/mcp/servers/Ahtasham00/tactab/badges/score.svg)](https://glama.ai/mcp/servers/Ahtasham00/tactab)
 [![MCP Standard](https://img.shields.io/badge/MCP-Standard-blue)](https://modelcontextprotocol.io/)
 [![Manifest V3](https://img.shields.io/badge/Chrome%20Extension-Manifest%20V3-brightgreen)](https://developer.chrome.com/docs/extensions/mv3/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
